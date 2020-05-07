@@ -2,7 +2,6 @@ package com.fabioqmarsiaj.javaperformancepoc.services;
 
 import com.fabioqmarsiaj.javaperformancepoc.processors.ArrayProcessor;
 import com.fabioqmarsiaj.javaperformancepoc.processors.FactorialProcessor;
-import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,7 @@ public class FactorialAndArrayService {
     @Autowired
     private ArrayProcessor arrayProcessor;
 
-    public String process(int value, ArrayList<String> array) throws InterruptedException {
+    public String process(String value, String[] array) {
         long factorial = factorialProcessor.process(value);
         String arrayAsString = arrayProcessor.process(array);
 

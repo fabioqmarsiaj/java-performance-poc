@@ -1,12 +1,11 @@
 package com.fabioqmarsiaj.javaperformancepoc.processors;
 
-import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ArrayProcessor {
 
-    public String process(ArrayList<String> array) {
+    public String process(String[] array) {
 
         StringBuilder stringBuilder = new StringBuilder();
 
