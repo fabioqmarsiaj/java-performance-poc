@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FactorialProcessor {
 
-    public long process(String value){
-        return ArithmeticUtils.factorial(Integer.parseInt(value));
+    public long process(int requestModel){
+        return ArithmeticUtils.factorial(requestModel);
     }
 }

@@ -1,5 +1,7 @@
 package com.fabioqmarsiaj.javaperformancepoc.controllers;
 
+import com.fabioqmarsiaj.javaperformancepoc.models.RequestModel;
+import com.fabioqmarsiaj.javaperformancepoc.models.ResponseModel;
 import com.fabioqmarsiaj.javaperformancepoc.services.FactorialAndArrayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,8 +22,7 @@ public class FactorialAndArrayController {
 
     @PostMapping(value = "/process")
     @ResponseBody
-    public ResponseEntity<String> processNumberFactorialAndArrayAsString(@RequestParam(value = "value") String value,
-                                                                        @RequestBody String[] array) {
-        return ResponseEntity.ok(factorialAndArrayService.process(value, array));
+    public ResponseEntity<ResponseModel> processNumberFactorialAndArrayAsString(@RequestBody RequestModel requestModel) {
+        return ResponseEntity.ok(factorialAndArrayService.process(requestModel));
     }
 }

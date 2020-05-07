@@ -1,5 +1,7 @@
 package com.fabioqmarsiaj.javaperformancepoc.services;
 
+import com.fabioqmarsiaj.javaperformancepoc.models.RequestModel;
+import com.fabioqmarsiaj.javaperformancepoc.models.ResponseModel;
 import com.fabioqmarsiaj.javaperformancepoc.processors.ArrayProcessor;
 import com.fabioqmarsiaj.javaperformancepoc.processors.FactorialProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,11 @@ public class FactorialAndArrayService {
     @Autowired
     private ArrayProcessor arrayProcessor;
 
-    public String process(String value, String[] array) {
-        long factorial = factorialProcessor.process(value);
-        String arrayAsString = arrayProcessor.process(array);
+    public ResponseModel process(RequestModel requestModel) {
+        long factorial = factorialProcessor.process(requestModel.getValue());
+        String arrayAsString = arrayProcessor.process(requestModel.getArrayAsString());
 
-        return factorial + " " + arrayAsString;
+        return new ResponseModel(factorial, arrayAsString);
     }
 }
 
