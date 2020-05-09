@@ -22,7 +22,7 @@ public class FactorialAndArrayController {
 
     @PostMapping(value = "/process")
     @ResponseBody
-    public ResponseEntity<ResponseModel> processNumberFactorialAndArrayAsString(@RequestBody RequestModel requestModel) {
+    public ResponseEntity<ResponseModel> processNumberFactorialAndArrayAsString(@RequestBody RequestModel requestModel) throws InterruptedException {
         return ResponseEntity.ok(factorialAndArrayService.process(requestModel));
     }
 }
